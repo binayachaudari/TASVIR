@@ -82,26 +82,26 @@ function scrollFunc() {
     var windowScroll = this.scrollY;
 
     var $carousel_cap = document.getElementsByClassName('carousel-caption');
-    $carousel_cap[0].style.transform = 'translateY(-' + windowScroll/3.5 + 'px)';   
-    $carousel_cap[1].style.transform = 'translateY(-' + windowScroll/3.5 + 'px)';   
-    $carousel_cap[2].style.transform = 'translateY(-' + windowScroll/3.5 + 'px)'; 
-    
-    
+    $carousel_cap[0].style.transform = 'translateY(-' + windowScroll/3.5 + 'px)';
+    $carousel_cap[1].style.transform = 'translateY(-' + windowScroll/3.5 + 'px)';
+    $carousel_cap[2].style.transform = 'translateY(-' + windowScroll/3.5 + 'px)';
+
+
 //    var $backBird = document.getElementsByClassName('bg-primary')[0];
 //    $backBird.style.transform = 'translateY(-' + windowScroll/3.5 + 'px)';
-//    
+//
 //    var $backBird = document.getElementById("services");
-//    $backBird.style.transform = 'translateY(-' + windowScroll/2.5 + 'px)'; 
-//    
+//    $backBird.style.transform = 'translateY(-' + windowScroll/2.5 + 'px)';
+//
 //    var $backBird = document.getElementById("categories");
-//    $backBird.style.transform = 'translateY(-' + windowScroll/2.5 + 'px)';  
-//    
+//    $backBird.style.transform = 'translateY(-' + windowScroll/2.5 + 'px)';
+//
 //    var $backBird = document.getElementsByClassName('bg-dark text-white')[0];
 //    $backBird.style.transform = 'translateY(-' + windowScroll/2.5 + 'px)';
-//    
+//
 //    var $backBird = document.getElementById("contact");
 //    $backBird.style.transform = 'translateY(-' + windowScroll/2.5 + 'px)';
-//    
+//
 //
 //    var $foreBird = document.getElementsByClassName('btn btn-primary btn-xl js-scroll-trigger')[0];
 //    $foreBird.style.transform = 'translateY(-' + windowScroll/6 + 'px)';
