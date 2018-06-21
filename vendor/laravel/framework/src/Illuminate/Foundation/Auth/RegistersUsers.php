@@ -32,10 +32,13 @@ trait RegistersUsers
 
         event(new Registered($user = $this->create($request->all())));
 
-        $this->guard()->login($user);
+        //added by Binaya: Redirect users to custom path.
+        return redirect($this->redirectPath())->with('status', 'Verification mail has been send to your email, Please verify your account to login!' );
 
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
+        // $this->guard()->login($user);
+        //
+        // return $this->registered($request, $user)
+        //                 ?: redirect($this->redirectPath());
     }
 
     /**
