@@ -49,10 +49,30 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
-          </ul>
+</ul>
+      @if (Auth::guest())
     <form class="form-inline my-2 my-lg-0">
       <a class="btn btn-outline-success my-2" href="login">Login</a>
     </form>
+    @else
+    <div class="dropdown">
+      <button class="btn btn-success my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ Auth::user()->name }}
+        </button>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    LOGOUT
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+    </div>
+@endif
+
         </div>
       </div>
     </nav>
@@ -121,10 +141,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <h2 class="section-heading text-white">Wiki Loves Earth in Nepal! (Event)</h2>
             <hr class="light my-4">
-            <p class="text-faded mb-4">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+            <p class="text-faded mb-4">Wiki Loves Earth is an international photographic competition to promote natural heritage sites around the World through Wikimedia projects. </p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Earth_2018_in_Nepal">Get Started!</a>
           </div>
         </div>
       </div>
@@ -159,7 +179,7 @@
             <div class="service-box mt-5 mx-auto">
               <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3">Up to Date</h3>
-              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+              <p class="text-muted mb-0">We update website to keep things fresh.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
@@ -273,7 +293,8 @@
     <section class="bg-dark text-white">
       <div class="container text-center">
         <h2 class="mb-4">Free Sign Up at Tasvir</h2>
-        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">SIGN UP</a>
+        <hr class="light my-4">
+        <a class="btn btn-light btn-xl sr-button" href="register">SIGN UP</a>
       </div>
     </section>
 
@@ -283,23 +304,37 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Let's Get In Touch!</h2>
             <hr class="my-4">
-            <p class="mb-5">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            <p class="mb-5">This is a website for all Nepalese interested in photography. Keep an open mind, ask questions, seek for feedback, share what you know, share what you think might help the members. We are all learning and such practice helps us grow individually as well as a community. </p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
+            <i class="fa fa-facebook fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a target="_blank" href="https://www.facebook.com/groups/Nepalese.In.Photography/">Nepalese in Photography</a>
+            </p>
           </div>
           <div class="col-lg-4 mr-auto text-center">
             <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">feedback@tasvir.com</a>
+              <a target="_blank" href="mailto:binayachaudari@gmail.com">contact@tasvir.com</a>
             </p>
           </div>
         </div>
       </div>
     </section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 mx-auto text-center">
+      <p>
+      Made with <span style="color: #e25555;">&#9829;</span> in NEPAL
+      <br>
+      &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+    </p>
+    </div>
+  </div>
+</div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -311,7 +346,7 @@
     <!-- <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script> -->
 
     <!-- Custom scripts for this template -->
-    <script src="js/creative.js"></script>
+    <script src="{{ asset('js/creative.js') }}"></script>
 
   </body>
 
