@@ -52,7 +52,7 @@
 </ul>
       @if (Auth::guest())
     <form class="form-inline my-2 my-lg-0">
-      <a class="btn btn-outline-success my-2" href="login">Login</a>
+      <a class="btn btn-outline-success my-2" href="{{ route('login') }}">Login</a>
     </form>
     @else
     <div class="dropdown">
