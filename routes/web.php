@@ -15,6 +15,8 @@ Route::get('/', 'PageController@index');
 
 Auth::routes();
 
+Route::get('/setting','PageController@setting');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/verify/{token}','VerifyController@verify')->name('verify');

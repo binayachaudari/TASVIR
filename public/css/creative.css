@@ -381,8 +381,8 @@ header.masthead p {
 
 .dropdown-menu{
   min-width: auto;
-  padding: .1rem 0;
-  margin: .1rem 0 0;
+  padding: .5rem 0;
+  margin: .5rem 0 0;
   font-weight: 400;
-  font-size: .9rem;
+  font-size: 1rem;
 }
