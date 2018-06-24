@@ -13,11 +13,4 @@
             <h6 class="text-muted">
                Sorry, the request had bad syntax or was inherently impossible to be satisfied!
             </h6>
-            <hr>
-            <a href="/" class="btn btn-outline-primary"><i class="fa fa-home"></i>
-            Take Me Home </a>
-         </div>
-      </div>
-   </div>
-</div>
 @endsection

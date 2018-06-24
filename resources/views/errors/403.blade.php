@@ -13,11 +13,4 @@
                 <h6 class="text-muted">
                     Sorry, you dont have permission for the resource!!
                 </h6>
-                <hr>
-                    <a href="/" class="btn btn-outline-primary"><i class="fa fa-home"></i>
-                        Take Me Home </a>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

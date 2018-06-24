@@ -97,7 +97,6 @@ font-family:'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 .btn {
   font-weight: 700;
   text-transform: uppercase;
-  border: none;
   /* border-radius: 300px; */
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }

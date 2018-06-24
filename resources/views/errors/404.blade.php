@@ -13,11 +13,4 @@
                 <h6 class="text-muted">
                     Sorry, an error has occured, Requested page not found!
                 </h6>
-                <hr>
-                    <a href="/" class="btn btn-outline-primary"><i class="fa fa-home"></i>
-                        Take Me Home </a>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
