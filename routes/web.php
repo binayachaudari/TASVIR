@@ -11,11 +11,12 @@
 |
 */
 
+
 Route::get('/', 'PageController@index');
 
 Auth::routes();
 
-Route::get('/setting','PageController@setting');
+Route::get('/setting','PageController@setting')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
