@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-6">
-      <div class="card text-center">
+      <div class="card text-center bg-light">
         <div class="card-header">
           <h3 class="text-center">
                Reset Password

@@ -3,7 +3,7 @@
 <div class="container">
 <div class="row justify-content-md-center">
    <div class="col-md-6">
-      <div class="card">
+      <div class="card bg-light">
          <div class="card-header">
             <h5 class="text-center">
             Login

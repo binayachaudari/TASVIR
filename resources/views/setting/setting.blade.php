@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 
   <!-- Custom script for this template -->
+  <!-- Ajax -->
   <script>
     $(document).ready(function() {
       $("#myTab li a").click(function(e) {
@@ -52,7 +53,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="/">TΛSVIR</a>
+      <a class="navbar-brand js-scroll-trigger" href="{{url('/')}}">TΛSVIR</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -89,26 +90,28 @@
   </nav>
   <div class="container">
     <h1 class="display-1 text-muted">Settings</h1>
-    <div>
+
       <div class="container">
         <div class="row justify-content-md-center">
           <div class="col-md-12">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="username-tab" data-toggle="tab" href="#username" role="tab" aria-controls="username" aria-selected="true" data-url="">Change Username</a>
+                <a class="nav-link active" id="username-tab" data-toggle="tab" href="#username" role="tab" aria-controls="username" aria-selected="true" data-url="{{url('/ChangeUsername')}}">Change Username</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false" data-url="">Change Password</a>
+                <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false" data-url="{{url('/ChangePassword')}}">Change Password</a>
               </li>
             </ul>
             <!-- Commented until ChangeUsername && ChangePassword blade made -->
-            <!-- <div class="tab-content" id="myTabContent">
+            <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="username" role="tabpanel" aria-labelledby="username-tab"></div>
                   <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab"></div>
-                  </div> -->
+                  </div>
           </div>
         </div>
       </div>
+      @yield('content')
+    </div>
       <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
       <!-- Plugin JavaScript -->
       <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
