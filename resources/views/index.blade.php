@@ -6,6 +6,8 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <Title>{{config('app.name','TASVIR')}}</Title>
+      <!-- Pace core CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-flash.min.css" />
       <!-- Bootstrap core CSS -->
       <link href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
       <!-- Custom fonts for this template -->
@@ -28,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                     <a class="nav-link js-scroll-trigger" href="#about">Events</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#services">Services</a>
@@ -325,6 +327,8 @@
       <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
       <script src="{{ asset('vendor/scrollreveal/scrollreveal.min.js') }}"></script>
       <!-- <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script> -->
+      <!-- Pace core JavaScript -->
+      <script data-pace-options='{ "ajax": false }' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
       <!-- Custom scripts for this template -->
       <script src="{{ asset('js/creative.js') }}"></script>
    </body>

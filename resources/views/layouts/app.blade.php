@@ -10,6 +10,8 @@
   <title>{{ config('app.name', 'TASVIR') }}</title>
   <!-- Styles -->
   <link href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+  <!-- Pace core CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-flash.min.css" />
 
   <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
   <style>
@@ -65,6 +67,8 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
   <!-- <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script> -->
+  <!-- Pace core JavaScript -->
+  <script data-pace-options='{ "ajax": false }' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
   <!-- Custom scripts for this template -->
   <script src="{{ asset('js/creative.js') }}"></script>
   <!-- Scripts -->

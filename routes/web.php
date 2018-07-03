@@ -20,11 +20,7 @@ Auth::routes();
 
 Route::get('/setting','PageController@setting')->middleware('auth');
 
-Route::get('/ChangeUsername','SettingController@showChangeUsernameForm');
-
 Route::POST('/ChangeUsername','SettingController@changeUsername')->name('changeUsername');
-
-Route::get('/ChangePassword','SettingController@showChangePasswordForm');
 
 Route::POST('/ChangePassword','SettingController@changePassword')->name('changePassword');
 

@@ -317,16 +317,8 @@ header.masthead p {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
 
-.carousel, .carousel-item, .active {
+.carousel, .carousel-inner, .carousel-item, .active {
     height:100%;
-}
-
-.carousel-inner {
-    height:100%;
-}
-
-.carousel-caption {
-    z-index: 10;
 }
 
 .carousel .carousel-inner .bg {
@@ -349,6 +341,7 @@ header.masthead p {
 }
 
 .carousel-caption {
+  z-index: 10;
     top: 40%;
     bottom: auto;
 }
