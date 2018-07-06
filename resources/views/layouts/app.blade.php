@@ -10,6 +10,8 @@
   <title>{{ config('app.name', 'TASVIR') }}</title>
   <!-- Styles -->
   <link href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <!-- Pace core CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-flash.min.css" />
 
@@ -24,7 +26,7 @@
 <body>
   <div id="app">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{url('/')}}">TΛSVIR</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,19 +35,32 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             @if (Auth::guest())
-            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">LOGIN</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">REGISTER</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i><span> </span>LOGIN</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i><span> </span>REGISTER</a></li>
             @else
             <div class="dropdown">
-              <button class="btn btn-success my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ Auth::user()->name }}
+              <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="floted-left rounded-circle" src="/uploads/avatars/{{Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" width="32" height="32">
+                        {{ Auth::user()->name}}
                         </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item text-center" href="#">
+                SIGNED IN AS: <br>
+              <strong>{{ Auth::user()->username }}</strong>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url(Auth::user()->username) }}">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                MY PROFILE
+                </a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ url('setting') }}">
+                  <i class="fa fa-user-cog" aria-hidden="true"></i>
                            SETTINGS
                            </a>
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
+                              <i class="fas fa-sign-out-alt"></i>
                            LOGOUT
                            </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -11,7 +11,7 @@
       <!-- Bootstrap core CSS -->
       <link href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
       <!-- Custom fonts for this template -->
-      <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
       <!-- Plugin CSS -->
@@ -44,21 +44,36 @@
                </ul>
                @if (Auth::guest())
                <form class="form-inline my-2 my-lg-0">
-                  <a class="btn btn-outline-success my-2" href="{{ route('login') }}">Login</a>
+                  <a class="btn btn-outline-success my-2" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i><span> </span></i><span> </span> Login</a>
                </form>
                @else
                <div class="dropdown">
-                  <button class="btn btn-success my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-outline-success my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="floted-left rounded-circle" src="/uploads/avatars/{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" width="32" height="32">
+
                   {{ Auth::user()->name }}
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item text-center" href="#">
+                    SIGNED IN AS: <br>
+                  <strong>{{ Auth::user()->username }}</strong>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <!-- User profile href -->
+                    <a class="dropdown-item" href="{{ url(Auth::user()->username) }}">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    MY PROFILE
+                    </a>
+                    <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="{{ url('setting') }}">
+                       <i class="fa fa-user-cog" aria-hidden="true"></i>
                      SETTINGS
                      </a>
                      <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i>
                      LOGOUT
                      </a>
                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -65,8 +65,9 @@
                   <div class="form-group">
                      <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">
+                          <i class="fas fa-sign-in-alt"></i>
                         Login
-                        </button>
+                      </button><br>
                         <a class="btn btn-link" href="{{ route('password.request') }}">
                         Forgot Your Password?
                         </a>

@@ -15,10 +15,30 @@ class SettingController extends Controller
    }
 
     public function ChangeUsername(Request $request){
+      if(strcmp($request->get('username'), Auth::user()->username) == 0){
+          //Current username and new username are same
+          return redirect()->back()
+          ->withErrors([
+           'username' => 'New username cannot be same as old username',
+         ]);
+       }
+
       $this->validate($request,[
-        ''=>'',
-        ''=>'',
+        'username'=>'required|string|max:20|min:3|unique:users',
+        'password'=>'required|string',
       ]);
+
+      if(Hash::check($request->get('password'),Auth::user()->password)){
+        $user=Auth::user();
+        $user->username=$request->get('username');
+        $user->save();
+        return redirect()->back()->with("user_success","Username has been changed !");
+      }
+      else {
+        return redirect()->back()->withErrors([
+          'password'=>'Incorrect password, Please try again!',
+        ]);
+      }
     }
 
     public function ChangePassword(Request $request){
@@ -50,5 +70,31 @@ class SettingController extends Controller
                $user->save();
 
                return redirect()->back()->with("success","Password changed successfully !");
+    }
+
+    public function changeName(Request $request){
+      if(strcmp($request->get('name'), Auth::user()->name)==0){
+        //Current username and new username are same
+        return redirect()->back()
+        ->withErrors([
+         'name' => 'New name cannot be same as old name',
+       ]);
+      }
+      $validatedData = $this->validate($request,[
+        'name'=>'required|min:3|max:25',
+      ]);
+
+      if(Hash::check($request->get('password'),Auth::user()->password)){
+        $user=Auth::user();
+        $user->name=$request->get('name');
+        $user->save();
+        return redirect()->back()->with("name_success","Your Name has been updated !");
+      }
+      else {
+        return redirect()->back()->withErrors([
+          'password'=>'Incorrect password, Please try again!',
+        ]);
+      }
+
     }
 }

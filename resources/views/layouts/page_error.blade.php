@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- Styles -->
   <link href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-  <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
   <title>{{ config('app.name', 'TASVIR') }}</title>
@@ -17,7 +17,7 @@
 <body>
   @yield('content')
   <hr>
-  <a href="{{url('/')}}" class="btn btn-lg btn-outline-primary"><i class="fa fa-home"></i>
+  <a href="{{url('/')}}" class="btn btn-lg btn-outline-primary"><i class="fas fa-home"></i>
       Take Me Home </a>
   </div>
   </div>

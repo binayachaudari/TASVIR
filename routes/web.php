@@ -24,6 +24,14 @@ Route::POST('/ChangeUsername','SettingController@changeUsername')->name('changeU
 
 Route::POST('/ChangePassword','SettingController@changePassword')->name('changePassword');
 
+Route::POST('/ChangeName','SettingController@changeName')->name('changeName');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{username}','ProfileController@showProfilePage');
+
+Route::POST('/updateAvatar','ProfileController@updateAvatar')->middleware('auth');
+
+Route::POST('/deleteAvatar','ProfileController@deleteAvatar')->middleware('auth');
 
 Route::get('/verify/{token}','VerifyController@verify')->name('verify');
