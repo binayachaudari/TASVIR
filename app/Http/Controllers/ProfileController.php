@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Image;
 use App\User;
+use App\Album;
+use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -14,16 +16,18 @@ class ProfileController extends Controller
 
     public function showProfilePage($username){
       $users=User::where('username',$username)->firstOrFail();
-      return view('profile',compact('users'));
-
+      $albums=Album::with('Photos')->where('user_id',$users->id)->orderBy('title', 'desc')->orderBy('created_at', 'desc')->get();
+      $photos = Photo::with('album')->orderBy('updated_at', 'desc')->get();
+      return view('profile',compact('users','albums','photos'));
     }
 
     public function updateAvatar(Request $request){
 
       $users=Auth::user();
 
+      // Validation
       $this->validate($request,[
-        'avatar'=>'image',
+        'avatar'=>'image|mimes:jpeg,png,jpg,gif,svg|max:1999',
       ]);
 
       //Delete current avatar image except the deafault one
@@ -66,6 +70,8 @@ class ProfileController extends Controller
         return redirect($users->username)->with($status,$message);
     }
 
+
+
       public function deleteAvatar(Request $request){
         $users=Auth::user();
 
@@ -86,8 +92,8 @@ class ProfileController extends Controller
         //set default avatar after files are deleted
         $users->avatar = 'default.jpg';
         $users->save();
-        // return redirect($users->username);
 
+        // return redirect($users->username);
         return redirect($users->username)->with($status,$message);
 
     }

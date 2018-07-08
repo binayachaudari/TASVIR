@@ -34,6 +34,15 @@ class User extends Authenticatable
      * @return null
      */
 
+     public function photos(){
+       return $this->hasMany('App\Photo');
+     }
+
+     public function albums(){
+       return $this->hasMany('App\Album');
+     }
+
+
     public function verified(){
       return $this->token===null;
     }

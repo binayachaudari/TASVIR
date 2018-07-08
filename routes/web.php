@@ -28,7 +28,33 @@ Route::POST('/ChangeName','SettingController@changeName')->name('changeName');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/discover','PhotosController@Discover');
+
+Route::get('{album_id}/editAlbum','AlbumsController@showEditAlbumForm')->middleware('auth');
+
+Route::POST('{album_id}/editAlbum','AlbumsController@editAlbum')->middleware('auth');
+
+Route::POST('{album_id}/deleteAlbum','AlbumsController@Destroy')->middleware('auth');
+
 Route::get('/{username}','ProfileController@showProfilePage');
+
+Route::get('/{username}/createAlbum','AlbumsController@showAlbumCreateForm')->middleware('auth');
+
+Route::POST('/{username}/createAlbum','AlbumsController@createAlbum')->middleware('auth');
+
+Route::get('/{username}/showAllalbums','PhotosController@showAllAlbumsForm')->middleware('auth');
+
+Route::get('/{username}/{album_id}/uploadPhoto','PhotosController@showPhotoUploadForm')->middleware('auth');
+
+Route::POST('/{username}/{album_id}/uploadPhoto','PhotosController@uploadPhoto')->middleware('auth');
+
+Route::get('/albums/{album_id}/{album_title}','AlbumsController@show');
+
+Route::get('/albums/{album_id}/{photo_id}/editPhoto','PhotosController@showPhotoEditForm')->middleware('auth');
+
+Route::POST('/albums/{album_id}/{photo_id}/editPhoto','PhotosController@editPhoto')->middleware('auth');
+
+Route::POST('/albums/{album_id}/{photo_id}/deletePhoto','PhotosController@Destroy')->middleware('auth');
 
 Route::POST('/updateAvatar','ProfileController@updateAvatar')->middleware('auth');
 
