@@ -17,7 +17,7 @@ class ProfileController extends Controller
     public function showProfilePage($username){
       $users=User::where('username',$username)->firstOrFail();
       $albums=Album::with('Photos')->where('user_id',$users->id)->orderBy('title', 'desc')->orderBy('created_at', 'desc')->get();
-      $photos = Photo::with('album')->orderBy('updated_at', 'desc')->get();
+      $photos = Photo::with('album')->where('user_id',$users->id)->orderBy('updated_at', 'desc')->get();
       return view('profile',compact('users','albums','photos'));
     }
 

@@ -18,9 +18,6 @@
         <p>Uploaded by: <a href="{{ url($photo->user->username) }}"> {{ $photo->user->name}}</a></p>
         <p>Album: <a href="{{ url('/albums/'.$photo->album->id.'/'.$photo->album->title) }}"> {{ $photo->album->title}}</a></p>
         <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <a class="btn btn-sm btn-outline-secondary" href="#">View</a>
-          </div>
           <small class="text-muted">{{ $photo->updated_at->diffForHumans() }}</small>
         </div>
       </div>

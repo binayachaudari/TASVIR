@@ -50,6 +50,8 @@
         </div>
         <div class="modal-body">
           You Want You Sure Delete This Album?
+          <br>
+          <p class="text-danger"><strong>Attention!!! </strong>Deleting This Album will Delete all the Photos inside it!</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary remove-data-from-delete-form" data-dismiss="modal">Close</button>
