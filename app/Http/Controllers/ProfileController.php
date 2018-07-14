@@ -30,17 +30,21 @@ class ProfileController extends Controller
         'avatar'=>'image|mimes:jpeg,png,jpg,gif,svg|max:1999',
       ]);
 
-      //Delete current avatar image except the deafault one
-      if ($users->avatar !== 'default.jpg'){
 
-      $file = public_path('/uploads/avatars/' . $users->avatar);
 
-      if (File::exists($file)) {
-        unlink($file);
-      }
-    }
 
       if($request->hasfile('avatar')){
+
+        //Delete current avatar image except the deafault one
+        if ($users->avatar !== 'default.jpg'){
+
+        $file = public_path('/uploads/avatars/' . $users->avatar);
+
+        if (File::exists($file)) {
+          unlink($file);
+        }
+      }
+
         $avatar=$request->file('avatar');
 
         //get filename with extension

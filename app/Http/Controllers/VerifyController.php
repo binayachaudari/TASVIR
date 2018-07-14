@@ -16,6 +16,12 @@ class VerifyController extends Controller
   * @return response
   */
     public function verify($token){
+      if(User::where('token','null')){
+        return redirect()
+        ->route('login')
+        ->with('success','Your account has already been verified, You can Login!');
+      }
+
       User::where('token', $token)->first()
                   ->update(['token'=>null]);//verify the user
 

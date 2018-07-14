@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="display-4 text-center"><i class="fas fa-md fa-globe-asia"></i>
+        Discover</h4>
+      <hr>
+    </div>
+  </div>
 @include('layouts.messages')
 <div class="mx-3 my-4">
   <div class="card-columns">
