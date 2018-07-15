@@ -12,6 +12,8 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
+      //Self add to exculde csrf token on all the forms in api request
+      'api/*',
         //
     ];
 }
