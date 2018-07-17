@@ -19,8 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/login','apiControllers\apiLoginController@showLoginForm')->middleware('guest');
-    Route::POST('/login','apiControllers\apiLoginController@login')->middleware('guest');
+    Route::get('/login','apiControllers\apiLoginController@showLoginForm');
+    Route::POST('/login','apiControllers\apiLoginController@login');
 
     Route::get('/register','Auth\RegisterController@showRegistrationForm');
     Route::POST('/register','apiControllers\apiRegisterController@register');

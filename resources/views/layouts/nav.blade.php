@@ -13,7 +13,6 @@
           Discover</a>
         <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-lg fa-sign-in-alt"></i><span> </span>LOGIN</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ route('register') }}"><i class="fas fa-lg fa-user-plus"></i><span> </span>REGISTER</a></li>
-        </li>
         @else
         <li class="nav-item my-2">
           <a class="nav-link" href="{{ url('discover') }}">
