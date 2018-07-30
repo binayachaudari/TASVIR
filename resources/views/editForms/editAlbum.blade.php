@@ -15,7 +15,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
           <label for="albumTitle">Edit Album Title</label>
-          <input type="text" class="form-control" id="albumTitel" placeholder="Edit Title of the Album" name="title" value="{{ old('title') }}">
+          <input type="text" class="form-control" id="albumTitle" placeholder="Edit Title of the Album" name="title" value="{{ old('title') }}">
         </div>
         <div class="form-group">
           <label for="Description">Edit Description/Caption</label>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
           <label>Edit Your Album Cover: </label>
-          <input class="btn btn-outline-primary btn-sm" type="file" name="cover_img">
+          <input class="btn btn-outline-primary btn-sm" type="file" name="cover_img" accept"image/*">
         </div>
         <button type="submit" class="btn btn-primary"><i class="far fa-lg fa-edit"></i>
         Edit Album</button>

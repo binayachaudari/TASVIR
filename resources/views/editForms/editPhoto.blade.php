@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
           <label>Change Photo: </label>
-          <input class="btn btn-outline-primary btn-sm" type="file" name="photo">
+          <input class="btn btn-outline-primary btn-sm" type="file" name="photo" accept="image/*">
         </div>
         <button type="submit" class="btn btn-primary"><i class="far fa-lg fa-edit"></i>
         Edit Photo</button>

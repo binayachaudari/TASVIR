@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
           <label>Choose Your Album Cover: </label>
-          <input class="btn btn-outline-primary btn-sm" type="file" name="cover_img">
+          <input class="btn btn-outline-primary btn-sm" type="file" name="cover_img" accept="image/*">
         </div>
         <button type="submit" class="btn btn-primary">Add Album</button>
       </form>

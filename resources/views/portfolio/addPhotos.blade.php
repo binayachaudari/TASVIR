@@ -24,7 +24,7 @@
         <input type="hidden" name="album_id" value="{{ $album_id }}">
         <div class="form-group">
           <label>Choose Photo: </label>
-          <input class="btn btn-outline-primary btn-sm" type="file" name="photo">
+          <input class="btn btn-outline-primary btn-sm" type="file" name="photo" accept="image/*">
         </div>
         <button type="submit" class="btn btn-primary">Add Photo</button>
       </form>

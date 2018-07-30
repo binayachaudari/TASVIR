@@ -44,6 +44,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+      if ($e instanceof TokenMismatchException){
+           // Redirect to a form. Here is an example of how I handle mine
+           return response()->view('errors.403')
+       }
       if($this->isHttpException($exception)){
         if (view()->exists('errors.'.$exception->getStatusCode()))
           {

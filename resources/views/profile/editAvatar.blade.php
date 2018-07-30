@@ -1,7 +1,7 @@
 @if(Auth::user()->id == $users->id)
 <form enctype="multipart/form-data" action="{{ url('/updateAvatar') }}" method="POST">
   <label>Update Your Profile Image: </label>
-  <input class="btn" type="file" name="avatar">
+  <input class="btn" type="file" name="avatar" accept="image/*">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
   <div class="text-right"><br>
     <button type="submit" class="btn btn-outline-primary btn-sm mx-1">Update Avatar</button>
